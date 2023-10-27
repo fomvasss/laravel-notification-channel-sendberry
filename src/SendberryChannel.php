@@ -45,14 +45,13 @@ class SendberryChannel
         try {
             $recipient = $this->getRecipient($notifiable);
             $message = $notification->toSendberry($notifiable);
-
+            
             if (is_string($message)) {
                 $message = new SendberryMessage($message);
             }
             if (! $message instanceof SendberryMessage) {
                 throw CouldNotSendNotification::invalidMessageObject($message);
             }
-
             return $this->smsApi->sendMessage($recipient, $message);
 
         } catch (Exception $exception) {

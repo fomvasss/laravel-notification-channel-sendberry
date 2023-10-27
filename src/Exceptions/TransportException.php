@@ -2,7 +2,9 @@
 
 namespace NotificationChannels\Sendberry\Exceptions;
 
-class TransportException extends \Exception
+use Exception;
+
+class TransportException extends Exception
 {
     //...
 }

@@ -5,6 +5,7 @@ namespace NotificationChannels\Sendberry;
 use GuzzleHttp\Client as HttpClient;
 use NotificationChannels\Sendberry\Exceptions\CouldNotSendNotification;
 use NotificationChannels\Sendberry\Exceptions\TransportException;
+use Exception;
 
 class SendberryApi
 {
@@ -58,12 +59,13 @@ class SendberryApi
         }
 
         $body = [
-            'from' => $this->from,
-            'to' => [$recipient],
-            'content' => $message->content,
             'key' => $this->authKey,
             'name' => $this->username,
             'password' => $this->password,
+            'content' => $message->content,
+            'from' => $this->from,
+            'to' => [$recipient],
+            'response' => 'JSON',
         ];
 
         if ($message->time) {
@@ -96,10 +98,8 @@ class SendberryApi
     {
         if ($this->testMode) {
             return [
-                'result' => [
-                    'url' => $url,
-                    'body' => $body,
-                ],
+                'url' => $url,
+                'body' => $body,
                 'info' => 'sendberry.test_mode.ok',
             ];
         }
@@ -118,9 +118,10 @@ class SendberryApi
             throw new TransportException('Unable to send the SMS.', $response);
         }
 
-        $responseArr = $response->toArray();
-        if (isset($responseArr['status']) && 'ok' !== $responseArr['status']) {
-            throw new TransportException(sprintf("Unable to send the SMS. \n%s\n.", implode("\n", $responseArr['message'])), $response);
+        $responseArr = json_decode($response->getBody()->getContents(), true);
+
+        if (isset($responseArr['status']) && $responseArr['status'] !== 'ok') {
+            throw new TransportException(sprintf("Unable to send the SMS. \n%s\n.", implode("\n", $responseArr['message'])));
         }
 
         return $responseArr;

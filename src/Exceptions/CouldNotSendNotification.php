@@ -3,8 +3,9 @@
 namespace NotificationChannels\Sendberry\Exceptions;
 
 use NotificationChannels\Sendberry\SendberryMessage;
+use Exception;
 
-class CouldNotSendNotification extends \Exception
+class CouldNotSendNotification extends Exception
 {
     /**
      * @return static

@@ -40,7 +40,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SendberryServiceProvider"
+                "NotificationChannels\\Sendberry\\SendberryServiceProvider"
             ]
         }
     }

@@ -77,7 +77,7 @@ class AccountApproved extends Notification
         return [SendberryChannel::class];
     }
 
-    public function toTurboSms($notifiable)
+    public function toSendberry($notifiable)
     {
         return (new SendberryMessage())->content("Hello SMS!!!")->test(true);
     }
@@ -96,7 +96,7 @@ public function routeNotificationForSendberry()
 
 ### Available methods
 
-`from()`: Sets the sender's name or phone number.
+`from()`: Sets the sender's name or phone number, for test use "Info SMS".
 
 `content()`: Set a content of the notification message.
 
