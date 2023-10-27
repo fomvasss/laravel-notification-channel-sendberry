@@ -4,11 +4,11 @@ Here's the latest documentation on Laravel's Notifications System:
 
 https://laravel.com/docs/master/notifications
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/fomvasss/laravel-notification-channel-senberry.svg?style=flat-square)](https://packagist.org/packages/fomvasss/laravel-notification-channel-senberry)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/fomvasss/laravel-notification-channel-sendberry.svg?style=flat-square)](https://packagist.org/packages/fomvasss/laravel-notification-channel-sendberry)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/fomvasss/laravel-notification-channel-sendberry.svg?style=flat-square)](https://scrutinizer-ci.com/g/fomvasss/laravel-notification-channel-sendberry)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/fomvasss/laravel-notification-channel-sendberry/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/fomvasss/laravel-notification-channel-sendberry/?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/fomvasss/laravel-notification-channel-senberry.svg?style=flat-square)](https://packagist.org/packages/fomvasss/laravel-notification-channel-senberry)
+[![Total Downloads](https://img.shields.io/packagist/dt/fomvasss/laravel-notification-channel-sendberry.svg?style=flat-square)](https://packagist.org/packages/fomvasss/laravel-notification-channel-sendberry)
 
 This package makes it easy to send notifications using [sendberry.com](https://www.sendberry.com/) with Laravel 9.0+.
 
@@ -30,7 +30,7 @@ This package makes it easy to send notifications using [sendberry.com](https://w
 Install this package with Composer:
 
 ```bash
-composer require fomvasss/laravel-notification-channel-senberry
+composer require fomvasss/laravel-notification-channel-sendberry
 ```
 
 The service provider gets loaded automatically. Or you can do this manually:
