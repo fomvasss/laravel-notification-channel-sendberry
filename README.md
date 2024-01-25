@@ -1,4 +1,4 @@
-# Sendberry notifications channel for Laravel 5.5+
+# Sendberry notifications channel for Laravel 9.0+
 
 Here's the latest documentation on Laravel's Notifications System: 
 
