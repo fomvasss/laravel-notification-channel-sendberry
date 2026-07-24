@@ -91,7 +91,7 @@ class SendberryMessage
      * @param string|null $time
      * @return $this
      */
-    public function time(string $time = null)
+    public function time(?string $time = null)
     {
         $this->time = $time;
 
@@ -102,7 +102,7 @@ class SendberryMessage
      * @param string|null $time
      * @return $this
      */
-    public function date(string $date = null)
+    public function date(?string $date = null)
     {
         $this->date = $date;
 
@@ -113,7 +113,7 @@ class SendberryMessage
      * @param string|null $url
      * @return $this
      */
-    public function webhook(string $url = null)
+    public function webhook(?string $url = null)
     {
         $this->webhook = $url;
 
